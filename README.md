@@ -1,9 +1,9 @@
-##Prediciting Electricity Usage
+## Prediciting Electricity Usage
 
 *Using Linear Regression and Web Scraping techniques, created model that predicts monthly electricity usage in the State of Louisiana*
 
 ---
-###Features and Target Variable
+### Features and Target Variable
 **Target Variable:** Electricity Sales
 
 **Features:**
@@ -25,7 +25,7 @@
 
 ---
 
-###Data Used
+### Data Used
 U.S. Energy Information Administration:
 https://www.eia.gov/
 
@@ -43,7 +43,7 @@ https://www.bea.gov/
 
 ---
 
-###Tools and Packages
+### Tools and Packages
 1. Python
 2. Pandas
 3. NumPy
@@ -56,7 +56,7 @@ https://www.bea.gov/
 
 ---
 
-###Repo Guide
+### Repo Guide
 
 ---
 **Data Gathering**

@@ -2,6 +2,8 @@
 
 *Using Linear Regression and Web Scraping techniques, created model that predicts monthly electricity usage in the State of Louisiana*
 
+*Utilized web scraping (Selenium and BeautifulSoup) to gather data from dynamically generated web pages. Implemented various modeling techniques such as feature engineering, autoregression, and lasso regularization. Final model predicting monthly electricity usage in the State of Louisiana performed with an r-squared of 90 percent and a mean absolute error of 243 MWh.*
+
 ---
 ### Features and Target Variable
 **Target Variable:** Electricity Sales
@@ -58,130 +60,26 @@ https://www.bea.gov/
 
 ### Repo Guide
 
----
 **Data Gathering**
+1. Scrape historical weather data - [weather_scrape.ipynb](https://github.com/dunleavyjason/electricity_usage/blob/main/weather_scrape.ipynb)
+2. Average weather info - [weather.ipynb](https://github.com/dunleavyjason/electricity_usage/blob/main/weather.ipynb)
+3. Scrape population data - [population.ipynb](https://github.com/dunleavyjason/electricity_usage/blob/main/population.ipynb)
+4. Import economic data - [economic_data.ipynb](https://github.com/dunleavyjason/electricity_usage/blob/main/economic_data.ipynb)
+5. Import building permit data - [building_permits.ipynb](https://github.com/dunleavyjason/electricity_usage/blob/main/building_permits.ipynb)
+6. Import EIA (electricity) data - [EIA.ipynb](https://github.com/dunleavyjason/electricity_usage/blob/main/EIA.ipynb)
 
-weather_scrape.ipynb
-	
-	- Notable packages: Selenium, BeautifulSoup
-	- Data source: https://www.wunderground.com/
-	- Exports:
-		○ kenner_scrape.pkl
-		○ baton_rouge_scrape.pkl
-		○ lake_charles_scrape.pkl
-		○ alexandria_scrape.pkl
-		○ shreveport_scrape.pkl
-
-weather.ipynb
-
-	- Imports:
-		○ Kenner_scrape.pkl
-		○ Baton_rouge_scrape.pkl
-		○ Lake_charles_scrape.pkl
-		○ Alexandria_scrape.pkl
-		○ Shreveport_scrape.pkl
-	- Exports:
-		○ Average_weather.pkl
-
-population.ipynb
-	
-	- Notable packages: BeautifulSoup
-	- Data Source: https://www.macrotrends.net/states/louisiana/population
-		○ Compared with US Census data - scraped from site for purposes of using BeautifulSoup
-	- Export:
-		○ State_pop.pkl
-
-economic_data.ipynb
-	
-	- Data source: https://www.bea.gov/
-	- Imports: 
-		○ Personal Income Summary Personal Income, Population, Per Capita Personal Income.csv
-		○ Gross Domestic Product (GDP) summary, quarterly by state.csv
-		○ Total personal consumption expenditures (PCE).csv
-	- Export:
-		○ econcomic_data.pkl
-
-building_permits.ipynb
-	
-	- Notable packages: urllib3
-	- Data Source: https://www.census.gov/construction/bps/
-	- Import:
-		○ permits_2019_11_2020_11.xlsx
-	- Export:
-		○ Permits.pkl
-
-EIA.ipynb
-	
-	- Data Source: https://www.eia.gov/
-	- Imports:
-		○ Retail_sales_of_electricity.csv
-		○ Average_retail_price_of_electricity.csv
-		○ Number_of_customer_accounts.csv
-		○ sales_smpy.xlsx
-	- Exports:
-		○ sales_price.csv
-		○ eia_data.pkl
-
----
 **Merging Data**
 
-Merge_eda.ipynb
-	
-	- Imports:
-		○ eia_data.pkl
-		○ permits.pkl
-		○ economic_data.pkl
-		○ average_weather.pkl
-		○ state_pop.pkl
-	- Export:
-		○ df.pkl
+1. Merge data into one dataframe - [merge_eda.ipynb](https://github.com/dunleavyjason/electricity_usage/blob/main/merge_eda.ipynb)
 
----
 **Feature Engineering**
 
-Feature_engineering.ipynb
-	
-	- Import:
-		○ df.pkl
-	- Export:
-		○ df_all_features.pkl
+1. Perform feature engineering - [feature_engineering.ipynb](https://github.com/dunleavyjason/electricity_usage/blob/main/feature_engineering.ipynb)
 
----
 **Linear Regression**
 
-linear_regression_all_features.ipynb
-	
-	- Notable packages:
-		○ Sci-kit learn
-		○ Seaborn
-	- Import:
-		○ df_all_features.pkl
-
-linear_regression_selected_features.ipynb
-	
-	- Notable packages:
-		○ Sci-kit learn
-		○ Seaborn
-	- Import:
-		○ df_all_features.pkl
-
-poly_regression_all_features.ipynb
-	
-	- Notable packages:
-		○ Sci-kit learn
-		○ Seaborn
-	- Import:
-		○ df_all_features.pkl
-
-poly_regression_selected_features.ipynb
-	
-	- Notable packages:
-		○ Sci-kit learn
-		○ Seaborn
-	- Import:
-            ○ df_all_features.pkl
-
-
-
-
+1. Linear Regression: All Features - [linear_regression_all_features.ipynb](https://github.com/dunleavyjason/electricity_usage/blob/main/linear_regression_all_features.ipynb)
+2. Linear Regression: Selected Features - [linear_regression_selected_features.ipynb](https://github.com/dunleavyjason/electricity_usage/blob/main/linear_regression_selected_features.ipynb)
+3. Polynomial Regression: All Features - [poly_regression_all_features.ipynb](https://github.com/dunleavyjason/electricity_usage/blob/main/poly_regression_all_features.ipynb)
+4. Polynomial Regression: Selected Features - [poly_regression_selected_features.ipynb](https://github.com/dunleavyjason/electricity_usage/blob/main/poly_regression_selected_features.ipynb)
 
